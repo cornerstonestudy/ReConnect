@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReConnect - Ereaders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">ReConnect</a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="cell-phones.html">Cell phones</a></li>
+              <li><a class="dropdown-item" href="laptops.html">Laptops</a></li>
+              <li><a class="dropdown-item" href="tablets.html">Tablets</a></li>
+              <li><a class="dropdown-item" href="ereaders.html">E-readers</a></li>
+              <li><a class="dropdown-item" href="bundles.html">Bundles</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Ereaders</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="images/ereader1.jpg" class="card-img-top" alt="Page Mage">
+                <div class="card-body">
+                    <h5 class="card-title">Page Mage</h5>
+                    <ul><li>High Performance</li><li>Expensive</li><li>Excellent Condition</li></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="images/ereader2.jpg" class="card-img-top" alt="One Liner">
+                <div class="card-body">
+                    <h5 class="card-title">One Liner</h5>
+                    <ul><li>Medium Performance</li><li>Budget Friendly</li><li>Good Condition</li></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="images/ereader3.jpg" class="card-img-top" alt="Rusty">
+                <div class="card-body">
+                    <h5 class="card-title">Rusty</h5>
+                    <ul><li>Low Performance</li><li>Cheap</li><li>Fair Condition</li></ul>
+                </div>
+            </div>
+        </div>
+        </div>
+  </section>
+  <footer>
+    <a href="#">About</a>
+    <a href="#">Connect</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+
+
+
+<!-- Gemini Chatbot -->
+<style>
+#chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 999;
+}
+#chatbot-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  max-height: 450px;
+  border: 1px solid #ccc;
+  background: white;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 998;
+}
+#chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+  height: 300px;
+}
+#chatbot-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+#chatbot-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-right: 1px solid #ccc;
+}
+#chatbot-input button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+</style>
+
+<div id="chatbot-window">
+  <div id="chatbot-messages">
+    <div><strong>ReConnect:</strong> Hello! Welcome to ReConnect! How may I help you?</div>
+  </div>
+  <div id="chatbot-input">
+    <input type="text" id="chatbot-user-input" placeholder="Ask me anything..." />
+    <button id="chatbot-send-btn">Send</button>
+  </div>
+</div>
+<button id="chatbot-button" onclick="toggleChat()">💬</button>
+
+<script>
+const API_KEY = "AIzaSyBZrw0mlRlyaKmfUf5qkVFz6_pxaQytaHo";
+
+function toggleChat() {
+  const win = document.getElementById('chatbot-window');
+  win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("chatbot-user-input");
+  const button = document.getElementById("chatbot-send-btn");
+
+  button.addEventListener("click", sendMessage);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+});
+
+</script>
+
+
+<script>
+let recommendationStep = 0;
+let userType = "";
+let fieldText = "";
+
+function handleSuggestionFlow(inputText) {
+  const text = inputText.toLowerCase();
+  const messages = document.getElementById('chatbot-messages');
+
+  if (recommendationStep === 0 && /suggest|recommend/.test(text)) {
+    messages.innerHTML += `<div><strong>ReConnect:</strong> Are you a student or a professional?</div>`;
+    messages.innerHTML += `<div><button onclick="selectUserType('student')">Student</button> <button onclick="selectUserType('professional')">Professional</button></div>`;
+    recommendationStep = 1;
+    return true;
+  }
+  return false;
+}
+
+function selectUserType(type) {
+  userType = type;
+  const messages = document.getElementById('chatbot-messages');
+  messages.innerHTML += `<div><strong>You:</strong> ${type}</div>`;
+  messages.innerHTML += `<div><strong>ReConnect:</strong> What is the field you're studying or working in?</div>`;
+  recommendationStep = 2;
+}
+
+async function analyzeField(inputText) {
+  const corrected = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [
+        { role: "user", parts: [{ text: "Please check this sentence and correct any typos and mistakes" }] },
+        { role: "user", parts: [{ text: inputText }] }
+      ]
+    })
+  });
+
+  const data = await corrected.json();
+  const correctedField = data?.candidates?.[0]?.content?.parts?.[0]?.text || inputText;
+  const messages = document.getElementById("chatbot-messages");
+
+  const keywordsPerformance = ["engineering", "engineer", "software", "developer", "mathematician", "coder", "coding", "analyst", "analysis", "analytics", "graphic", "designer"];
+  const keywordsCompetence = ["mba", "management", "manager", "doctor", "phd", "accountant", "finance", "accounting", "financial", "insurance"];
+
+  const fieldLC = correctedField.toLowerCase();
+  let recommendation = "Rising Star Bundle";
+
+  if (keywordsPerformance.some(k => fieldLC.includes(k))) {
+    recommendation = "Performance Bundle";
+  } else if (keywordsCompetence.some(k => fieldLC.includes(k))) {
+    recommendation = "Competence Bundle";
+  }
+
+  messages.innerHTML += `<div><strong>You:</strong> ${inputText}</div>`;
+  messages.innerHTML += `<div><strong>ReConnect:</strong> Based on your field, I recommend the <strong>${recommendation}</strong>!</div>`;
+  messages.scrollTop = messages.scrollHeight;
+  recommendationStep = 0;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chatbot-user-input');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const messages = document.getElementById('chatbot-messages');
+  input.value = '';
+
+  if (recommendationStep === 2) {
+    await analyzeField(text);
+    return;
+  }
+
+  messages.innerHTML += `<div><strong>You:</strong> ${text}</div>`;
+  if (handleSuggestionFlow(text)) return;
+
+  try {
+    const res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [
+          { role: "user", parts: [{ text: "Please adopt the persona of an energetic consumer electronics salesman and radiate energy with your uplifting attitude and words. If the questions are beyond anything that is not related to consumer electronics, please just respond with answers like 'I'm not an expert in that area so I don't know the answer'. Feel free to be creative with this. Also, please come up with responses that are not too long. Be concise but helpful." }] },
+          { role: "user", parts: [{ text }] }
+        ]
+      })
+    });
+
+    const data = await res.json();
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "(No reply)";
+    messages.innerHTML += `<div><strong>ReConnect:</strong> ${reply}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  } catch (err) {
+    messages.innerHTML += `<div style="color:red;"><em>Error: ${err.message}</em></div>`;
+  }
+}
+</script>
+
+</body>
+</html>
