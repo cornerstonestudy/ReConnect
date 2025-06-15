@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReConnect Electronics</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">ReConnect</a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="cell-phones.html">Cell phones</a></li>
+              <li><a class="dropdown-item" href="laptops.html">Laptops</a></li>
+              <li><a class="dropdown-item" href="tablets.html">Tablets</a></li>
+              <li><a class="dropdown-item" href="ereaders.html">E-readers</a></li>
+              <li><a class="dropdown-item" href="bundles.html">Bundles</a></li>
+            
+
+
+
+          </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+<li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<main class="container py-5">
+  <h2 class="mb-4 text-center">We Value Your Feedback</h2>
+<form method="POST" action="https://b41c-34-106-196-7.ngrok-free.app/submit_feedback">
+  <label>Your Name</label>
+  <input type="text" name="name" class="form-control" required />
+
+  <label>Your Comment</label>
+  <textarea name="comment" class="form-control" required></textarea>
+
+  <button type="submit" class="btn btn-primary">Submit Feedback</button>
+</form>
+
+
+
+</main>
+
+</body>
+</html>
